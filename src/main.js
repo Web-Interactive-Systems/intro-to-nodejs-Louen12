@@ -1,0 +1,2 @@
+require("./lab8");
+

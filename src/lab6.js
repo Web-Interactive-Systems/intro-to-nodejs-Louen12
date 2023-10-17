@@ -14,4 +14,21 @@
  
  */
 
-const http = require("http");
+        const http = require("http");
+
+        const server = http.createServer((req, res) => {
+            if (req.url === "/") {
+                res.write("<h1>Hello, this is http node module</h1>");
+                res.write("<a href='/dashboard'>Dashbaoard -></a>");
+                res.end();
+            } else if (req.url === "/dashboard") {
+                res.write("<h1>Dashbaoard</h1>");
+                res.write("<main>Basic routing using node http server</main>");
+                res.write("<a href='/'>back home</a>");
+                res.end();
+            }
+            });
+        
+        server.listen(3000, () => {
+            console.log("Server is listening on port 3000");
+        });
